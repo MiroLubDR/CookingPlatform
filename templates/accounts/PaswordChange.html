@@ -1,0 +1,32 @@
+{% extends 'Base/Base.html' %}
+{% load static %}
+{% block page_content %}
+    <main class="mainSection">
+        <div class="accaount" style="background-image: url('{% static 'img//cooking_reg_bg.jpg' %}')">
+
+            <form class="card__form" method="post" action="{% url 'Change Password' user.id%}">
+                <h2>Create Product</h2>
+                {% csrf_token %}
+
+                {{ form}}
+                <button class="submit_btn" type="submit">Change password</button>
+            </form>
+
+        </div>
+    </main>
+{% endblock %}
+{#    <script src="{% static 'web_admin/js/jquery-3.4.1.min.js' %}"></script>#}
+{#    <script>#}
+{#        $("#CallPasswordChangeButton").on('click', function (e) {#}
+{#            e.preventDefault(); // avoid to execute the actual submit of the form.#}
+{#            var form = $('#PasswordChnageForm');#}
+{#            $.ajax({#}
+{#                type: 'Post',#}
+{#                url: "{% url 'Change Password' user.id %}",#}
+{#                data: form.serialize(),#}
+{#                success: function (data) {#}
+{#                    $('#password_change').empty().html(data);#}
+{#                }#}
+{#            });#}
+{#        });#}
+{#    </script>#}

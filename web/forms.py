@@ -18,4 +18,8 @@ class RecipeForm(djangoForms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['recipe_img','recipe_name','products','description']
+        widgets ={
+            'description':djangoForms.Textarea(
+                attrs={'rows':5,'cols':60,'class': 'form_control','title': 'description' },
 
+            )}

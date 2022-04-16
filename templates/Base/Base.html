@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education Meeting HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+      <link rel="stylesheet" href={% static 'assets/css/fontawesome.css' %}>
+      <link rel="stylesheet" href={% static 'assets/css/templatemo-edu-meeting.css' %}>
+      <link rel="stylesheet" href={% static 'assets/css/owl.css' %}>
+      <link rel="stylesheet" href={% static 'assets/css/lightbox.css' %}>
+      <link rel="stylesheet" href="{% static 'css/Register_Form.style.css' %} ">
+      <link rel="stylesheet" href="{% static 'css/create_form2.style.css' %}">
+
+  </head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+{#          <div class="left-content">#}
+{#            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>#}
+{#          </div>#}
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="" class="logo">
+                          YouCook
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="{% url 'Home' %}" class="">Home</a></li
+                          <li class="scroll-to-section"><a href="{% url 'Top 10'  %}">Top10</a></li>
+                          <li class="has-sub">
+                              <a href="">Recipe Category</a>
+                              <ul class="sub-menu">
+                                  <li><a href="">vegan food</a></li>
+                                  <li><a href="{% url 'Recipe list' %}">All Dishes</a></li>
+                              </ul>
+                          </li>
+
+                           {% if not user.is_authenticated %}
+                            <li class="scroll-to-section"><a href="{% url 'Register' %}">Register</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'Login' %}">Login</a></li>
+                          {% endif %}
+                          {% if user.is_authenticated %}
+                              <li class="scroll-to-section"><a href="{% url 'Recipe create' %}">Add Recepie</a></li>
+                              <li class="scroll-to-section"><a href="{% url 'Profile' %}">My Profile</a></li>
+                              <li class="scroll-to-section"><a href="{% url 'LogOut' %}">LogOut</a></li>
+                          {% endif %}
+                      </ul>
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+{#  ///////////////////////////////////////////#}
+{#                                            ///#}
+        {% block page_content %}
+        {% endblock %}
+{#                                          ////#}
+{#  //////////////////////////////////////////////////#}
+  <div class="footer2">
+      <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved.
+          <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
+    </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/tabs.js' %}"></script>
+    <script src="{% static 'assets/js/video.js' %}"></script>
+    <script src="{% static 'assets/js/slick-slider.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'Base/Base.html'%}
+{% load static %}
+
+{% block page_content %}
+<body>
+    <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>New Recepies</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% for article in object_list%}
+
+    <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-15">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>$</span>
+                  </div>
+                    {% if article.recipe_img %}
+                        <a href="{% url 'Recipe details' article.id %}"><img src="{{ article.recipe_img.url }}" alt="New Lecturer Meeting"></a>
+                    {% else %}
+                        <a href="{% url 'Recipe details' article.id %}"><img src="{% static 'img/recipe_defout.png' %}" alt="New Lecturer Meeting"></a>
+                    {% endif %}
+                </div>
+                <div class="down-content">
+                  <div class="date">
+                    <h6>likes: {{ article.recipe_likes }}</h6>
+                  </div>
+                  <a href=""><h4>{{ article.recipe_name }}</h4></a>
+                  <p>Products:</p>
+                  <p>{{ article.products }}</p>
+                  <p>Chef: {{ article.user.profile.first_name }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+{% endfor %}
+{% endblock %}
+

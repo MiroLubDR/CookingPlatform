@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ object.headline }}</h1>
+    <p>Name:{{ object.recipe_name }}</p>
+    <p>description: {{ object.description }}</p>
+    <p>Published: {{ object.post_date }}</p>
+    <p>Views: {{ object.recipe_views_count }}</p>
+    <li class="button"><a href="{% url 'Recipe edit' object.id %}">Edit</a></li>
+    <li class="button"><a href="{% url 'Recipe Delete' object.id %}">Delete</a></li>
+</body>
+</html>

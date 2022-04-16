@@ -1,0 +1,17 @@
+{% extends 'Base/Base.html' %}
+{% load static %}
+{% block page_content %}
+    <main class="mainSection">
+        <div class="accaount" style="background-image: url('{% static 'img//cooking_reg_bg.jpg' %}')">
+
+            <form class="card__form" method="post" action='{{ action_url }}' enctype='multipart/form-data'>
+                <h2>Create Product</h2>
+                {% csrf_token %}
+
+                {{ form}}
+                <button class="submit_btn" type="submit">Create</button>
+            </form>
+
+        </div>
+    </main>
+{% endblock %}
